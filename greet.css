@@ -1,0 +1,54 @@
+.container{
+    
+    background-color: lightgray;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto
+}
+h1{
+    padding-top: 2em;
+    text-align: center;
+}
+
+.textbox{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+}
+.count{
+    font-size: 35px;
+    padding-left: 0.2em;
+}
+.radiobtn{
+    text-align: center;
+    padding-top: 1em;
+}
+
+h2{
+    text-align: center;
+    padding-bottom: 2em;
+}
+.radioerror{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.texterror{
+    text-align: center;
+}
+@media (max-width: 800px) {
+    .container{
+        width: 90%;
+    }
+    .gbutton{
+        padding-top: 1em;
+        text-align: center;
+    }
+}
+@media (min-width:900px){
+    .gbutton{
+        padding-left: 35.4em;
+        padding-top: 1em;
+    }
+
+}
