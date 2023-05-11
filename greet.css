@@ -40,14 +40,14 @@ h2{
     .container{
         width: 90%;
     }
-    .gbutton{
+    .buttons{
         padding-top: 1em;
         text-align: center;
     }
 }
 @media (min-width:900px){
-    .gbutton{
-        padding-left: 35.4em;
+    .buttons{
+        text-align: center;;
         padding-top: 1em;
     }
 

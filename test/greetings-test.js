@@ -31,7 +31,7 @@ describe("GreetedUsers function test", function (){
             let GreetMe = greetMe()
             GreetMe.greetedUsers('Mike')
 
-            assert.deepEqual({mike : 1},GreetMe.getGreetedUsers())
+            assert.deepEqual({Mike : 1},GreetMe.getGreetedUsers())
 
         })
     }) 
