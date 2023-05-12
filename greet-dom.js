@@ -11,7 +11,7 @@ const radioBtn = document.querySelector("input[name='language']:checked")
 var greet = greetMe()
 greetingsCounter = localStorage.getItem("screenCounter", greet.greetedUsers()) || 0;
 // Refresh webpage and get from localStorage
-counter.innerHTML = greetingsCounter
+counter.innerHTML = greet.counter()
 
 
 greetMeBtn.addEventListener("click",function(){

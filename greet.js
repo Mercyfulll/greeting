@@ -1,6 +1,7 @@
+var greetingsCounter = 0;
+
 function greetMe(){
     var namesGreeted = {};
-    var greetingsCounter = 0;
 
     function validateName(name){
         var valid = /^[A-Za-z]+$/
