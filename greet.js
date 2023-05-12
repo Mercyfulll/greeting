@@ -1,7 +1,6 @@
-var greetingsCounter = 0;
-
 function greetMe(){
     var namesGreeted = {};
+    var greetingsCounter = 0;
 
     function validateName(name){
         var valid = /^[A-Za-z]+$/
@@ -33,11 +32,15 @@ function greetMe(){
     function counter(){
         return greetingsCounter;
     }
+    function resetCount(){
+        greetingsCounter = 0;
+    }
     return {
         greetedUsers,
         languageSelector,
         validateName,
-        counter
+        counter,
+        resetCount
 
     }
 }

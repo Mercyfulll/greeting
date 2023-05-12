@@ -32,9 +32,11 @@ h2{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    color: red;
 }
 .texterror{
     text-align: center;
+    color: red;
 }
 @media (max-width: 800px) {
     .container{
