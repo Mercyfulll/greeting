@@ -4,7 +4,6 @@ function greetMe(){
     var namesGreeted = {};
 
     function validateName(name){
-        message = ''
         var valid = /^[A-Za-z]+$/
         var validName = valid.test(name)
         if(validName){
@@ -31,10 +30,14 @@ function greetMe(){
         }
         return greetingsCounter;
     }
+    function counter(){
+        return greetingsCounter;
+    }
     return {
         greetedUsers,
         languageSelector,
-        validateName
+        validateName,
+        counter
 
     }
 }
