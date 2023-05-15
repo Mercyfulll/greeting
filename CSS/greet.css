@@ -28,24 +28,28 @@ h2{
     text-align: center;
     padding-bottom: 2em;
 }
-.radioerror{
+.errors{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    color: red;
 }
-.texterror{
+.error{
     text-align: center;
     color: red;
 }
 @media (max-width: 800px) {
     .container{
         width: 90%;
+        background-color: #e9edc9;
     }
     .buttons{
         padding-top: 1em;
         text-align: center;
     }
+    .rbutton, .gbutton{
+        background-color: lightgoldenrodyellow;
+    }
+    
 }
 @media (min-width:900px){
     .buttons{

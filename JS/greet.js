@@ -7,7 +7,7 @@ function greetMe(){
         var valid = /^[A-Za-z]+$/
         var validName = valid.test(name)
         if(validName){
-            return name 
+            return name
        }    
     }
     function languageSelector(language){
@@ -20,15 +20,21 @@ function greetMe(){
        }
     }
     function greetedUsers(name){
-        if (namesGreeted[name] === undefined){
+        var lowNames = name.toLowerCase()
+        if (namesGreeted[lowNames] === undefined){
             greetingsCounter++;
             //add an entry for the user that was greeted in the Object Map
-            namesGreeted[name] = 1;
+            namesGreeted[lowNames] = 1;
         } else {
             // update the counter for a specific username
-            namesGreeted[name]++;
+            namesGreeted[lowNames]++;
         }
         return greetingsCounter;
+    }
+    function errorDisplay(){
+        if(!validateName() || languageSelector()){
+            return "No name or no language selected"
+        }
     }
     function counter(){
         return greetingsCounter;
@@ -40,8 +46,8 @@ function greetMe(){
         greetedUsers,
         languageSelector,
         validateName,
+        errorDisplay,
         counter,
         resetCount
-
     }
 }

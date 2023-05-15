@@ -4,57 +4,45 @@ const resetBtn = document.querySelector(".rbutton")
 const greetDisplay = document.querySelector(".output")
 const greetName = document.querySelector(".gname")
 const counter = document.querySelector(".count") 
-const textboxError = document.querySelector(".texterror")
-const radioBtnError = document.querySelector(".radioerror")
+const error = document.querySelector(".error")
 const radioBtn = document.querySelector("input[name='language']:checked")
 
 var greet = greetMe()
-greetingsCounter = localStorage.getItem("screenCounter", greet.greetedUsers()) || 0;
+greetingsCounter = localStorage.getItem("screenCounter", greet.greetedUsers(nameInput.value)) || 0;
 // Refresh webpage and get from localStorage
-counter.innerHTML = greet.counter()
+counter.innerHTML = greet.greetedUsers(nameInput.value)
 
 
 greetMeBtn.addEventListener("click",function(){
     var name = nameInput.value;
     var radioBtn = document.querySelector("input[name='language']:checked")
     
-    if(greet.validateName(name) && radioBtn){
-        textboxError.innerHTML = ''
-        radioBtnError.innerHTML = '' 
+    if(greet.validateName(name) && radioBtn){ 
         greetName.innerHTML = greet.validateName(name)
         greetDisplay.innerHTML = greet.languageSelector(radioBtn.value);
         // set value into localStorage
         localStorage.setItem("screenCounter", greet.greetedUsers(name))
         // get from localStorage
-        counter.innerHTML = localStorage.getItem("screenCounter", greet.greetedUsers())
+        counter.innerHTML = localStorage.getItem("screenCounter", greet.greetedUsers(name))
     }   
-    if (!radioBtn){
-        var msg = radioBtnError.innerHTML = "Please select language"
+    if(!greet.validateName(name) || !radioBtn){
+        error.innerHTML = greet.errorDisplay() 
         setTimeout(function(){
-            var msg = radioBtnError.innerHTML = ""
+            var msg = error.innerHTML = ""
             msg.parentNode.removeChild(msg)
         },2500)
-    } 
-    if(!greet.validateName(name)){
-        textboxError.innerHTML = "Please enter Name - alphabets only with no spaces" 
-        setTimeout(function(){
-            var msg = textboxError.innerHTML = ""
-            msg.parentNode.removeChild(msg)
-        },2500)
-    } 
-    
-        
+    }         
 })
 
 resetBtn.addEventListener("click",function(){
+    localStorage.clear()
+    nameInput.value = ''
     counter.innerHTML = 0;
     greet.resetCount()
-    nameInput.value = ''
-    textboxError.innerHTML = ''
-    radioBtnError.innerHTML = ''
     greetName.innerHTML = 'Name';
     greetDisplay.innerHTML = 'Greeting';
-    radioBtn.checked = false;
+    document.querySelector("input[name='language']:checked").checked = false;
+        
     
 
      

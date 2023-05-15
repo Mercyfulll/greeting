@@ -78,3 +78,30 @@ describe("The ValidateName function", function(){
     })
 
 })
+describe("The errorDisplay function", function(){
+
+    it("It should return an error if name is not entered",function(){
+        let GreetMe = greetMe()
+
+        GreetMe.validateName('')
+
+        assert.equal('No name or no language selected',GreetMe.errorDisplay())
+    })
+
+    it("It should return an error if language is not selected",function(){
+        let GreetMe = greetMe()
+
+        GreetMe.languageSelector('')
+
+        assert.equal('No name or no language selected',GreetMe.errorDisplay())
+    })
+   
+    it("It should return an error if name is not entered and language is not selected",function(){
+        let GreetMe = greetMe()
+
+        GreetMe.languageSelector('')
+        GreetMe.validateName('')
+
+        assert.equal('No name or no language selected',GreetMe.errorDisplay())
+    })
+})

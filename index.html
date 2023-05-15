@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="greet.css">
+    <link rel="stylesheet" href="CSS/greet.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
         <h1>Greetings</h1>
+        <div class="errors">
+            <span class="error"></span>
+        </div>
         <div class="textbox">
             <label name="name">Name:</label>
             <input type="text" class="text" name="name">
             <label class = "count" >0</label>
-        </div>
-        <div class="texterror">
-            <span class="texterror"></span>
         </div>
         <div class="radiobtn"> 
             <input type="radio" name="language" value="english">
@@ -28,17 +28,15 @@
             <input type="radio" name="language" value="isizulu">
             <label for="html">Isizulu</label>
         </div>
-        <div class="radioerror">
-            <span class="radioerror"></span>
-        </div>
+        
         <div class="buttons">
-        <button class="rbutton" type="button">Reset</button>
         <button class="gbutton" type="button">Greet me</button>
+        <button class="rbutton" type="button">Reset</button>
         </div>
         <H2> <span class="output">Greeting</span>, <span class="gname">Name</span></H2>
     </div>
-    <script src="greet.js"></script>
-    <script src="greet-dom.js"></script>
+    <script src="JS/greet.js"></script>
+    <script src="JS/greet-dom.js"></script>
 </body>
 
 </html>
