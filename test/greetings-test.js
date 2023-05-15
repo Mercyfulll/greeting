@@ -85,7 +85,7 @@ describe("The errorDisplay function", function(){
 
         GreetMe.validateName('')
 
-        assert.equal('No name or no language selected',GreetMe.errorDisplay())
+        assert.equal('Please enter name',GreetMe.nameErrorDisplay())
     })
 
     it("It should return an error if language is not selected",function(){
@@ -93,7 +93,7 @@ describe("The errorDisplay function", function(){
 
         GreetMe.languageSelector('')
 
-        assert.equal('No name or no language selected',GreetMe.errorDisplay())
+        assert.equal('Please select language',GreetMe.buttonErrorDisplay())
     })
    
     it("It should return an error if name is not entered and language is not selected",function(){
@@ -102,6 +102,6 @@ describe("The errorDisplay function", function(){
         GreetMe.languageSelector('')
         GreetMe.validateName('')
 
-        assert.equal('No name or no language selected',GreetMe.errorDisplay())
+        assert.equal('No name or language selected',GreetMe.errorDisplay())
     })
 })

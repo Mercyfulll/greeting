@@ -24,12 +24,30 @@ greetMeBtn.addEventListener("click",function(){
         localStorage.setItem("screenCounter", greet.greetedUsers(name))
         // get from localStorage
         counter.innerHTML = localStorage.getItem("screenCounter", greet.greetedUsers(name))
+        nameInput.value = ''
+        radioBtn.checked = false;
     }   
-    if(!greet.validateName(name) || !radioBtn){
-        error.innerHTML = greet.errorDisplay() 
+    if(!greet.validateName(name) ){
+        error.innerHTML = greet.nameErrorDisplay() 
         setTimeout(function(){
             var msg = error.innerHTML = ""
-            msg.parentNode.removeChild(msg)
+            msg.parentNode
+        },2500)
+    }
+    if(!radioBtn){
+        error.innerHTML = greet.buttonErrorDisplay()
+        setTimeout(function(){
+            var msg = error.innerHTML = ""
+            msg.parentNode
+        },2500)
+    }
+    if(!greet.validateName(name) && !radioBtn){
+         var msg3 = greet.errorDisplay() 
+         error.innerHTML = msg3
+        setTimeout(function(){
+            var msg = ""
+            error.innerHTML = msg
+            msg.parentNode
         },2500)
     }         
 })

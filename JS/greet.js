@@ -32,8 +32,18 @@ function greetMe(){
         return greetingsCounter;
     }
     function errorDisplay(){
-        if(!validateName() || languageSelector()){
-            return "No name or no language selected"
+        if(!validateName() && !languageSelector()){
+            return "No name or language selected"
+        }
+    }
+    function nameErrorDisplay(){
+        if(!validateName()){
+            return "Please enter name"
+        }
+    }
+    function buttonErrorDisplay(){
+        if(!languageSelector()){
+            return "Please select language"
         }
     }
     function counter(){
@@ -47,6 +57,8 @@ function greetMe(){
         languageSelector,
         validateName,
         errorDisplay,
+        nameErrorDisplay,
+        buttonErrorDisplay,
         counter,
         resetCount
     }
