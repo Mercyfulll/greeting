@@ -10,13 +10,13 @@ describe("The Greeting function test",function(){
 
     it("It should return 'Dumela' when language is 'setswana' ", function(){
         let GreetMe = greetMe()
-        GreetMe.languageSelector("setswane")
+        GreetMe.languageSelector("setswana")
 
         assert.equal('Dumela',GreetMe.languageSelector('setswana'))
 
     })
 
-    it("It should return 'Sawubona' when language is 'isizulu' ", function(){
+    it("It should return 'Hello' when language is 'english' ", function(){
         let GreetMe = greetMe()
         GreetMe.languageSelector("english")
 
